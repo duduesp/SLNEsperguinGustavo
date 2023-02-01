@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SistemaWebMisRecetas.Models.Receta>
+@{
+    ViewData["Title"] = "Lista de recetas";
+}
+@Html.ActionLink("Volver", "Index", "Receta")
+
+
+@section SideBar {
+    @Html.ActionLink("Nueva Receta", "Create", "Receta")
+}
+
+    <table>
+        <tr>
+            <th>@Html.DisplayNameFor(m=> m.Nombre)</th>
+            <th>@Html.DisplayNameFor(m=> m.Categoria)</th>
+            <th>@Html.DisplayNameFor(m=> m.NombreAutor)</th>
+            <th>@Html.DisplayNameFor(m=> m.ApellidoAutor)</th>
+        </tr>
+
+    @foreach (var receta in Model)
+    {
+                        <tr>
+                            <td>
+                @Html.DisplayFor(m=> receta.Nombre)
+                            </td>
+                            <td>
+                @Html.DisplayFor(m=> receta.Categoria)
+                            </td>
+                            <td>
+                @Html.DisplayFor(m=> receta.NombreAutor)
+                            </td>
+                            <td>
+                @Html.DisplayFor(m=> receta.ApellidoAutor)
+                            </td>
+                            <td>
+
+                            </td>
+
+                            <td>
+                            </td>
+
+                        </tr>
+    }
+    </table>

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/site.css" rel="stylesheet" type="text/css"/>
+</head>
+@*<body>
+
+    <div id="header">
+        <h1>Mis Recetas</h1>
+    </div>
+        <div id="menu">
+        @Html.ActionLink("Inicio","Index","Home")
+        @Html.ActionLink("Receta","Index","Receta")
+    </div>
+    <div id="sidebar">
+        @if (IsSectionDefined("SideBar"))
+        {
+            @RenderSection("SideBar")
+        }
+        else
+        {
+         <h2>Mis Recetas. </h2>
+        }
+    </div>
+
+
+    <div class="main">
+
+        <div id="content">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>MisRecetas@web.com</p>
+    </div>
+</body>
+</html>*@
+
+<body>
+    <div class="principal">
+        <div class="navbar">
+            <div class="navinterno">
+                <h1> Mis Recetas</h1>
+
+            </div>
+            <div class="navinterno">
+
+                @Html.ActionLink("Home", "Index", "Home")
+                @Html.ActionLink("Ir a las recetas","Index","Receta")
+                @Html.ActionLink("Create", "Create", "Receta")
+
+
+            </div>
+        </div>
+
+        <div class="bodyid">
+          }
+            <div class="renderbody">
+                @RenderBody()
+
+            </div>
+
+
+            <div class="sidebarR">
+                @if (IsSectionDefined("SideBar"))
+                {
+                    @RenderSection("SideBar")
+                }
+                else
+                {
+             <h2>Mis Recetas. </h2>
+                }
+            </div>
+
+        </div>
+        <div class="footer">
+
+            <h2>info@misrecetas.com</h2>
+
+        </div>
+
+    </div>
+</body>
+</html>
